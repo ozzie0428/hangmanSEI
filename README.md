@@ -11,7 +11,7 @@ Once players come to the site, they are asked to input their names. The plyaer w
 * VS code. 
 
 ## WireFrame 
-![Wireframe of my 1st project](/Users/ozziecunningham/Desktop/ga-sei/hangmanSEI/images/IMG_3895.jpg)
+![Wireframe of my 1st project](images/IMG_3895.jpg)
 
 ## Future Developments/Improvements
 * Display a hangman as either ASCII art or images that represent the various stages of the hangman.
