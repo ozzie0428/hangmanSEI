@@ -9,6 +9,10 @@ function namePromt() {
     
   }
 
+// words = {
+//     sports: ['Football','Futbol','penalty','foul','goal','touchdown','helmet','jersey','kit','cleats','giants','knicks','liverpool'],
+//     sei: ['function','array','for loop','while loop','variables','methods','html','javascript','css','objects','events','if','else']
+// }
 // create array of words for sports
 const sportsWords = ['Football','Futbol','penalty','foul','goal','touchdown','helmet','jersey','kit','cleats','giants','knicks','liverpool'];
 
@@ -16,18 +20,32 @@ const sportsWords = ['Football','Futbol','penalty','foul','goal','touchdown','he
 const seiWords = ['function','array','for loop','while loop','variables','methods','html','javascript','css','objects','events','if','else'];
 
 // create array of words for palindrome
-const palindromeWords = ['level','Hannah','civic','kayak','madam','racecar','stats','mom','Noon','peep','sooloos','deedeed','kakkak','racecar'];
+const palindromeWords = ['level','Hannah','civic','kayak','madam','racecar','stats','mom','Noon','peep','sooloos','deedeed','kakkak'];
 
 // choose random words 
-let random = Math.floor(Math.random() * sportsWords.length); 
+let random = Math.floor(Math.random() * seiWords.length); 
+
 let chosenSports =  sportsWords[random];
 // console.log(chosenSports);
+
 let chosenSei = seiWords[random];
-// console.log(chosenSei);
+console.log(chosenSei);
+
 let chosenPalindrome = palindromeWords[random];
-console.log(chosenPalindrome);
-// create underscore based on length of words
+// console.log(chosenPalindrome);
+
+ // create underscore based on length of words
+ let guessedLetter = []
+ function blankLetter() {
+    for (let i = 0; i <  chosenSei.length; i++) {
+        guessedLetter.push('_');
+    }
+    return guessedLetter;
+ }
+ console.log(blankLetter());
 // get users submission 
+// get submit button reshuffle the words
 // check if user is correct 
 // if user is correct, push to correct section 
 // if user is wrong, push to incorrect secrion 
+// be able to count guess left
