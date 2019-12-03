@@ -15,6 +15,9 @@ const sportsWords = ['Football','Futbol','penalty','foul','goal','touchdown','he
 // create array of words for SEI
 const seiWords = ['function','array','for loop','while loop','variables','methods','html','javascript','css','objects','events','if','else'];
 
+// create array of words for palindrome
+const palindromeWords = ['level','Hannah','civic','kayak','madam','racecar','stats','mom','Noon','peep','sooloos','deedeed','kakkak','racecar'];
+
 // choose random words 
 // create underscore based on length of words
 // get users submission 
