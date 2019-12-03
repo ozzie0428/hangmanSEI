@@ -23,7 +23,9 @@ let random = Math.floor(Math.random() * sportsWords.length);
 let chosenSports =  sportsWords[random];
 // console.log(chosenSports);
 let chosenSei = seiWords[random];
-console.log(chosenSei);
+// console.log(chosenSei);
+let chosenPalindrome = palindromeWords[random];
+console.log(chosenPalindrome);
 // create underscore based on length of words
 // get users submission 
 // check if user is correct 
