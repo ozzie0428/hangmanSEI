@@ -12,6 +12,9 @@ function namePromt() {
 // create array of words for sports
 const sportsWords = ['Football','Futbol','penalty','foul','goal','touchdown','helmet','jersey','kit','cleats','giants','knicks','liverpool'];
 
+// create array of words for SEI
+const seiWords = ['function','array','for loop','while loop','variables','methods','html','javascript','css','objects','events','if','else'];
+
 // choose random words 
 // create underscore based on length of words
 // get users submission 
