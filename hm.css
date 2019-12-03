@@ -1,4 +1,58 @@
 /* make sure Css is working */
 h1 {
-    color: red;
+    color:red;
+}
+h1 {
+    text-align: center;
+}
+
+header {
+    font-size: 20px;
+    border: 5px solid black;
+    text-align: center;
+    margin: 0 auto;
+   
+}
+
+.button {
+    margin-left: 47%;
+}
+
+.remaining {
+    font-size: 50px;
+    border: 5px solid black;
+    text-align: center;
+    margin-top: 10px;
+    width: 1000px;
+    height: 100px;
+}
+.answerSlots {
+    font-size: 20px;
+    font-size: 70px;
+    margin: 25px auto;
+    margin-top: 10px;
+    border: 5px solid black;
+    text-align: center;
+  
+}
+
+.correctLetters {
+    font-size: 20px;
+    margin-top: 10px;
+    border: 5px solid black;
+    text-align: center;
+    margin: 25px auto;
+    height: 100px;
+    width: 500px;
+
+}
+
+.wrongLetters {
+    font-size: 20px;
+    margin-top: 10px;
+    border: 5px solid black;
+    text-align: center;
+    margin: 25px auto;
+    height: 100px;
+    width: 500px;
 }

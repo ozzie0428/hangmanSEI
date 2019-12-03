@@ -9,24 +9,29 @@
     <script defer src="app.js"></script>
 </head>
 <body>
-    <header>
+    <div class="container">
     <h1>Hangman SEI</h1>
+    <header >
     <div id="nameButton">
-    <h2>HangmanSIE</h2>
-    <H3>Topic Picked Goes Here </H3>
+        <h2>HangmanSIE</h2>
+            <H3>Topic Picked Goes Here </H3>
     </header>
-    
-<button onclick="namePromt()">Start HangmanSie</button>
+    <br>
+
+<button class="button" onclick="namePromt()">Start HangmanSie</button>
 
 <p id="demo"></p>  
 </div>
 <div class="remaining"> USER has ____ guesses remaining</div>
+<br>
 
 <div class="answerSlots">_ _ _ _ _ _ _</div>
+<br>
 
-<div class="corretLetters "> You Got It</div>
+<div class="correctLetters "> You Got It</div>
+<br>
 
 <div class="wrongLetters"> Sorry, Not This One </div>
-
+</div>
 </body>
 </html>
