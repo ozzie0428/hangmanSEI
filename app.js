@@ -53,11 +53,17 @@ let chosenPalindrome = palindromeWords[random];
     if(chosenSei.indexOf(keyWord) > -1) {
         // console.log(true)
         correctLetters.push(keyWord); 
-        console.log(correctLetters);
-    } else {
-        wrongLetters.push(keyWord);
-        console.log(wrongLetters); 
+        // console.log(correctLetters);
+    } 
+    guessedLetter[chosenSei.indexOf(keyWord)] = keyWord;
+    if (guessedLetter.join('') == chosenSei) {
+        alert('Congrats, you won!');
     }
+    else {
+        wrongLetters.push(keyWord);
+        // console.log(wrongLetters);  
+    }
+
  })
 
 // if user is correct, push to correct section 
@@ -65,5 +71,9 @@ let correctLetters = [];
 
 // if user is wrong, push to incorrect secrion 
 let wrongLetters = [];
+
+// replace underscore with letters
+
+
 // be able to count guess left
 // get submit button reshuffle the words
