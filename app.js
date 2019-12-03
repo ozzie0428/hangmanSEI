@@ -44,8 +44,16 @@ let chosenPalindrome = palindromeWords[random];
  }
  console.log(blankLetter());
 // get users submission 
-// get submit button reshuffle the words
+ document.addEventListener('keypress',(event)=> {
+    //  console.log(event)  
+    let keys = event.keyCode || event.which;
+    // convert key numbers into a srting.
+    let keyWord = String.fromCharCode(keys); 
+    // console.log(keyWord); 
+ })
+
 // check if user is correct 
 // if user is correct, push to correct section 
 // if user is wrong, push to incorrect secrion 
 // be able to count guess left
+// get submit button reshuffle the words
