@@ -1,4 +1,14 @@
 // create promt for user name
+function namePromt() {
+    var personName = prompt("Please enter your name", " Enter Name");
+    let welcome = document.querySelector("#nameButton").innerHTML =
+    "Hello " + personName + "! Welcome To HangmanSei";
+        if (personName != null) {
+        alert(welcome);
+    }
+    
+  }
+
 
 // create array of words
 // choose random words 
