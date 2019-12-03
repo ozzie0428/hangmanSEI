@@ -21,7 +21,9 @@ const palindromeWords = ['level','Hannah','civic','kayak','madam','racecar','sta
 // choose random words 
 let random = Math.floor(Math.random() * sportsWords.length); 
 let chosenSports =  sportsWords[random];
-console.log(chosenSports);
+// console.log(chosenSports);
+let chosenSei = seiWords[random];
+console.log(chosenSei);
 // create underscore based on length of words
 // get users submission 
 // check if user is correct 
