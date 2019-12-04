@@ -17,10 +17,10 @@ function namePromt() {
 const sportsWords = ['nfl','futbol','penalty','foul','goal','score','kit','cleats','giants','team',];
 
 // create array of words for SEI
-const seiWords = ['function','while','var','methods','html','objects','github','if','const'];
+// const seiWords = ['function','while','var','methods','html','objects','github','if','const'];
 
 // create array of words for palindrome
-const palindromeWords = ['level','Hannah','civic','kayak','madam','racecar','stats','mom','Noon','peep','sooloos','deedeed','kakkak'];
+// const palindromeWords = ['level','Hannah','civic','kayak','madam','racecar','stats','mom','Noon','peep','sooloos','deedeed','kakkak'];
 
 // choose random words 
 let random = Math.floor(Math.random() * sportsWords.length); 
@@ -28,10 +28,10 @@ let random = Math.floor(Math.random() * sportsWords.length);
 let chosenSports =  sportsWords[random];
 console.log(chosenSports);
 
-let chosenSei = seiWords[random];
+// let chosenSei = seiWords[random];
 // console.log(chosenSei);
 
-let chosenPalindrome = palindromeWords[random];
+// let chosenPalindrome = palindromeWords[random];
 // console.log(chosenPalindrome);
 // if user is correct, push to correct section 
 let correctLetters = [];
@@ -41,7 +41,7 @@ let wrongLetters = [];
 
 // replace underscore with letters
 let newUnderscore = document.querySelector('.answerSlots');
-
+console.log(newUnderscore);
 let guessedLetter = []
 
  // create underscore based on length of words
@@ -52,7 +52,7 @@ let guessedLetter = []
     }
     return guessedLetter;
  }
- console.log(blankLetter());
+ console.log(blankLetter);
 
 
 
@@ -70,7 +70,7 @@ let guessedLetter = []
         correctLetters.push(keyWord); 
         console.log(correctLetters);
         guessedLetter[chosenSports.indexOf(keyWord)] = keyWord;
-        blankLetter[0].innerHTML = guessedLetter.join(' ');
+        newUnderscore.innerHTML = guessedLetter.join(' ');
     if (guessedLetter.join('') == chosenSports) {
         alert('Congrats, you won!');
         
@@ -87,7 +87,7 @@ let guessedLetter = []
 
  });
   
- newUnderscore.innerHTML[0] = blankLetter().join(' ');
+ newUnderscore.innerHTML = blankLetter().join(' ');
 
 
 
