@@ -40,8 +40,10 @@ let correctLetters = [];
 let wrongLetters = [];
 
 // replace underscore with letters
-let newUnderscore = document.querySelector('.answerSlots');
-console.log(newUnderscore);
+let AnswerSlotsDisplay = document.querySelector('.answerSlots');
+let wrongLettersDisplay = document.querySelector('.wrongLetters')
+let correctLettersDisplay = document.querySelector('.correctLetters')
+
 let guessedLetter = []
 
  // create underscore based on length of words
@@ -70,7 +72,9 @@ let guessedLetter = []
         correctLetters.push(keyWord); 
         console.log(correctLetters);
         guessedLetter[chosenSports.indexOf(keyWord)] = keyWord;
-        newUnderscore.innerHTML = guessedLetter.join(' ');
+        wrongLettersDisplay.innerHTML = wrongLetters;
+        AnswerSlotsDisplay.innerHTML = guessedLetter.join(' ');
+        
     if (guessedLetter.join('') == chosenSports) {
         alert('Congrats, you won!');
         
@@ -87,8 +91,8 @@ let guessedLetter = []
 
  });
   
- newUnderscore.innerHTML = blankLetter().join(' ');
-
+ AnswerSlotsDisplay.innerHTML = blankLetter().join(' ');
+// wrongLettersDisplay.innerHTML = blankLetter().join(' ');
 
 
 
