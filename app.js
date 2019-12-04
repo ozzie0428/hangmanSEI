@@ -24,6 +24,8 @@ const sportsWords = ['nfl','futbol','penalty','foul','goal','score','kit','cleat
 
 // choose random words 
 let random = Math.floor(Math.random() * sportsWords.length); 
+// create function to reolad game 
+
 
 let chosenSports =  sportsWords[random];
 console.log(chosenSports);
@@ -39,10 +41,13 @@ let correctLetters = [];
 // if user is wrong, push to incorrect secrion 
 let wrongLetters = [];
 
+let remainingGuesses = 6;
+
 // replace underscore with letters
 let AnswerSlotsDisplay = document.querySelector('.answerSlots');
 let wrongLettersDisplay = document.querySelector('.wrongLetters')
 let correctLettersDisplay = document.querySelector('.correctLetters')
+
 
 let guessedLetter = []
 
@@ -54,7 +59,7 @@ let guessedLetter = []
     }
     return guessedLetter;
  }
- console.log(blankLetter);
+//  console.log(blankLetter);
 
 
 
@@ -72,7 +77,7 @@ let guessedLetter = []
         correctLetters.push(keyWord); 
         console.log(correctLetters);
         guessedLetter[chosenSports.indexOf(keyWord)] = keyWord;
-        wrongLettersDisplay.innerHTML = wrongLetters;
+       
         AnswerSlotsDisplay.innerHTML = guessedLetter.join(' ');
         correctLettersDisplay.innerHTML = correctLetters;
     if (guessedLetter.join('') == chosenSports) {
@@ -84,9 +89,18 @@ let guessedLetter = []
     
     else {
         wrongLetters.push(keyWord);
-        console.log(wrongLetters);  
+        console.log(wrongLetters); 
+        wrongLettersDisplay.innerHTML = wrongLetters; 
+       remainingGuesses--;
+       if(remainingGuesses == 0){
+           alert('Game over');
+           document.location.reload();
+            clearInterval(interval); 
+       }
+       console.log('guesses left are' + remainingGuesses)
     }
 //    console.log(keys)
+    
    
 
  });
