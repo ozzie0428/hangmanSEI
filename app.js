@@ -74,7 +74,7 @@ let guessedLetter = []
         guessedLetter[chosenSports.indexOf(keyWord)] = keyWord;
         wrongLettersDisplay.innerHTML = wrongLetters;
         AnswerSlotsDisplay.innerHTML = guessedLetter.join(' ');
-        
+        correctLettersDisplay.innerHTML = correctLetters;
     if (guessedLetter.join('') == chosenSports) {
         alert('Congrats, you won!');
         
