@@ -41,13 +41,13 @@ let correctLetters = [];
 // if user is wrong, push to incorrect secrion 
 let wrongLetters = [];
 
-let remainingGuesses = 6;
+let remainingGuesses = 5;
 
 // replace underscore with letters
 let AnswerSlotsDisplay = document.querySelector('.answerSlots');
 let wrongLettersDisplay = document.querySelector('.wrongLetters')
-let correctLettersDisplay = document.querySelector('.correctLetters')
-
+let correctLettersDisplay = document.querySelector('.correctLetters');
+let remainingGuessDisplay = document.querySelector('.remaining');
 
 let guessedLetter = []
 
@@ -62,10 +62,17 @@ let guessedLetter = []
 //  console.log(blankLetter);
 
 
-
 // get users submission 
 // convert key numbers into a srting.
  document.addEventListener('keypress',(event)=> { 
+    
+    if(remainingGuesses == 0){
+        alert('Game over');
+        document.location.reload();
+         clearInterval(interval); 
+    }
+    
+     
      let keyWord = String.fromCharCode(event.keyCode);
     //  console.log(event)  
    
@@ -79,7 +86,7 @@ let guessedLetter = []
         guessedLetter[chosenSports.indexOf(keyWord)] = keyWord;
        
         AnswerSlotsDisplay.innerHTML = guessedLetter.join(' ');
-        correctLettersDisplay.innerHTML = correctLetters;
+        correctLettersDisplay.innerHTML = 'BINGO! THIS LETTER IS THERE\N:' + correctLetters;
     if (guessedLetter.join('') == chosenSports) {
         alert('Congrats, you won!');
         
@@ -88,28 +95,34 @@ let guessedLetter = []
     } 
     
     else {
+        // remainingGuessDisplay.innerHTML = 'guesses left are ' + remainingGuesses;
         wrongLetters.push(keyWord);
         console.log(wrongLetters); 
-        wrongLettersDisplay.innerHTML = wrongLetters; 
-       remainingGuesses--;
-       if(remainingGuesses == 0){
-           alert('Game over');
-           document.location.reload();
-            clearInterval(interval); 
-       }
-       console.log('guesses left are' + remainingGuesses)
+        
+        // be able to count guess left
+        remainingGuessDisplay.innerHTML = 'guesses left are ' + remainingGuesses;
+        console.log('guesses left are ' + remainingGuesses)
+        remainingGuesses--;
+        wrongLettersDisplay.innerHTML = 'SORRY, NOT THIS ONE\n:' + wrongLetters; 
+       
+       
+       
+       
     }
 //    console.log(keys)
     
    
 
  });
-  
+//  if(remainingGuesses === 0){
+//     alert('Game over');
+//     document.location.reload();
+//      clearInterval(interval); 
+// }
  AnswerSlotsDisplay.innerHTML = blankLetter().join(' ');
 // wrongLettersDisplay.innerHTML = blankLetter().join(' ');
 
 
 
 
-// be able to count guess left
 // get submit button reshuffle the words
