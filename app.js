@@ -14,10 +14,10 @@ function namePromt() {
 //     sei: ['function','array','for loop','while loop','variables','methods','html','javascript','css','objects','events','if','else']
 // }
 // create array of words for sports
-const sportsWords = ['football','futbol','penalty','foul','goal','touchdown','helmet','banana','kit','cleats','giants','knicks','liverpool'];
+const sportsWords = ['nfl','futbol','penalty','foul','goal','score','kit','cleats','giants','team',];
 
 // create array of words for SEI
-const seiWords = ['function','array','for loop','while loop','variables','methods','html','javascript','css','objects','events','if','else'];
+const seiWords = ['function','while','var','methods','html','objects','github','if','const'];
 
 // create array of words for palindrome
 const palindromeWords = ['level','Hannah','civic','kayak','madam','racecar','stats','mom','Noon','peep','sooloos','deedeed','kakkak'];
@@ -39,29 +39,42 @@ let correctLetters = [];
 // if user is wrong, push to incorrect secrion 
 let wrongLetters = [];
 
+// replace underscore with letters
+let newUnderscore = document.querySelector('.answerSlots');
+
+let guessedLetter = []
+
  // create underscore based on length of words
- let guessedLetter = []
  function blankLetter() {
     for (let i = 0; i <  chosenSports.length; i++) {
         guessedLetter.push('_');
+        
     }
     return guessedLetter;
  }
-//  console.log(blankLetter());
+ console.log(blankLetter());
+
+
+
 // get users submission 
- document.addEventListener('keypress',(event)=> {
+// convert key numbers into a srting.
+ document.addEventListener('keypress',(event)=> { 
+     let keyWord = String.fromCharCode(event.keyCode);
     //  console.log(event)  
-    let keys = event.keyCode || event.which;
-    // convert key numbers into a srting.
-    let keyWord = String.fromCharCode(keys); 
+   
+    
+  
     // console.log(keyWord); 
     if(chosenSports.indexOf(keyWord) > -1) {
         console.log(true)
         correctLetters.push(keyWord); 
         console.log(correctLetters);
         guessedLetter[chosenSports.indexOf(keyWord)] = keyWord;
-    if (guessedLetter == chosenSports) {
+        blankLetter[0].innerHTML = guessedLetter.join(' ');
+    if (guessedLetter.join('') == chosenSports) {
         alert('Congrats, you won!');
+        
+        
     }
     } 
     
@@ -69,12 +82,15 @@ let wrongLetters = [];
         wrongLetters.push(keyWord);
         console.log(wrongLetters);  
     }
+//    console.log(keys)
+   
 
- })
+ });
+  
+ newUnderscore.innerHTML[0] = blankLetter().join(' ');
 
 
 
-// replace underscore with letters
 
 
 // be able to count guess left

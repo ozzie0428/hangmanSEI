@@ -33,7 +33,8 @@ header {
     margin-top: 10px;
     border: 5px solid black;
     text-align: center;
-  
+    width: 1000px;
+    height: 100px;
 }
 
 .correctLetters {
