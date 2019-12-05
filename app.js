@@ -5,7 +5,7 @@ function namePromt() {
     "Hello " + personName + "! Welcome To HangmanSei";
         if (personName != null) {
         alert(welcome);
-    }
+    } 
    
 
   }
@@ -13,9 +13,10 @@ function namePromt() {
 
   document.querySelector(".button")
         .addEventListener("click", function() {
-  document.querySelector(".hideMe").hidden = true;
   document.querySelector(".revealMe").hidden = false;
-}, false);
+  document.querySelector(".hideMe").hidden = false;
+  document.querySelector(".button").hidden = true;
+}, true);
 
 // words = {
 //     sports: ['Football','Futbol','penalty','foul','goal','touchdown','helmet','jersey','kit','cleats','giants','knicks','liverpool'],

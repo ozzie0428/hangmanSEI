@@ -7,7 +7,7 @@ h1 {
 }
 
 header {
-    font-size: 20px;
+    font-size: 40px;
     border: 5px solid black;
     text-align: center;
     margin: 0 auto;
@@ -59,11 +59,17 @@ header {
 }
 
 .hideMe {
-    display: none;
+    /* display: none; */
 }
 
 ul {
     
     margin-left: 35%;
     
+}
+
+body {
+    background-color: #ad7c00;
+background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
