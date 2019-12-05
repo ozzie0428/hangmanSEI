@@ -10,8 +10,9 @@
     <script defer src="app.js"></script>
     
 </head>
-<body>
+<body id="container">
     <div class="revealMe">
+        
     <h1>Hangman SEI</h1>
     <header >
     <div id="nameButton">
@@ -19,9 +20,9 @@
             
     </header>
     <br>
-
-<button class="button" onclick=" namePromt()">Start HangmanSie</button>
-<h1 class="instructions">Instructions:</h1>
+<button class="btn btn-primary btn-lg btn-block" id="button" onclick=" namePromt()">Start HangmanSie</button>
+<section class="instructions">
+<h1>Instructions:</h1>
 <ul>
 <li> You have 6 wrong guesses to select the correct word.</li>
 <br>
@@ -31,18 +32,21 @@
 <br>
 <li>Correct letters will display in the "BINGO! THIS LETTER IS THERE" section.</li>
 </ul>
+</section>
+<section class="game">
 </div>
 <div class="hideMe">
-<div class="remaining"> guesses left </div>
+<div class="remaining"> guesses left: </div>
 <br>
 
 <div class="answerSlots"></div>
 <br>
 
-<div class="correctLetters "> BINGO! THIS LETTER IS THERE</div>
+<div class="correctLetters "> BINGO! THIS LETTER IS THERE:</div>
 <br>
 
-<div class="wrongLetters"> SORRY, NOT THIS ONE </div>
+<div class="wrongLetters"> SORRY, NOT THIS ONE: </div>
 </div>
+</section>
 </body>
 </html>

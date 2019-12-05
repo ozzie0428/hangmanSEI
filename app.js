@@ -4,18 +4,18 @@ function namePromt() {
     let welcome = document.querySelector("#nameButton").innerHTML =
     "Hello " + personName + "! Welcome To HangmanSei";
         if (personName != null) {
-        alert(welcome);
+        // alert(welcome);
     } 
    
 
   }
  
 
-  document.querySelector(".button")
+  document.querySelector("#button")
         .addEventListener("click", function() {
   document.querySelector(".revealMe").hidden = false;
   document.querySelector(".hideMe").hidden = false;
-  document.querySelector(".button").hidden = true;
+  document.querySelector("#button").hidden = true;
 }, true);
 
 // words = {
@@ -33,11 +33,14 @@ const sportsWords = ['nfl','futbol','penalty','foul','goal','score','kit','cleat
 
 // choose random words 
 let random = Math.floor(Math.random() * sportsWords.length); 
+
 // create function to reolad game 
 
 
 let chosenSports =  sportsWords[random];
 console.log(chosenSports);
+
+
 
 // let chosenSei = seiWords[random];
 // console.log(chosenSei);
@@ -51,6 +54,8 @@ let correctLetters = [];
 let wrongLetters = [];
 
 let remainingGuesses = 5;
+
+
 
 // replace underscore with letters
 let AnswerSlotsDisplay = document.querySelector('.answerSlots');
@@ -69,6 +74,30 @@ let guessedLetter = []
     return guessedLetter;
  }
 //  console.log(blankLetter);
+let hint = function() {
+    if(chosenSports == 'nfl') {
+    alert('HINT: played on two days of the week')
+    
+} else if(chosenSports == 'futbol') {
+    alert('HINT: every where else but America calls it this')
+} else if(chosenSports == 'penalty') {
+    alert('HINT: when a player gets fouled in the box')
+} else if(chosenSports == 'foul') {
+    alert('HINT: NBA players never commit these')
+} else if(chosenSports == 'goal') {
+    alert('HINT: anouncer says this for LOOOOOOOONG time')
+} else if(chosenSports == 'score') {
+    alert('HINT: the box ______') 
+} else if(chosenSports == 'kit') {
+    alert('HINT: also known as a jersey')
+} else if(chosenSports == 'cleats') {
+    alert('HINT: gear used in multiple sports')
+} else if(chosenSports == 'giants') {
+    alert('HINT: my favorite team')
+} else if(chosenSports == 'team') {
+    alert('HINT: this doesnt have an I in it')
+}
+}
 
 
 // get users submission 
@@ -84,10 +113,19 @@ let guessedLetter = []
      
      let keyWord = String.fromCharCode(event.keyCode);
     //  console.log(event)  
+    let duplicate = function(){
+        if( wrongLetters.includes(keyWord)) {
+            alert('banana')
+            return true;
+        } else {
+            return false
+        }
+    }
    
-    
-  
-    // console.log(keyWord); 
+   const isHere =  duplicate()
+   if (isHere){
+    console.log('ALRAEDY TRIED')
+   } else{
     if(chosenSports.indexOf(keyWord) > -1) {
         console.log(true)
         correctLetters.push(keyWord); 
@@ -95,7 +133,7 @@ let guessedLetter = []
         guessedLetter[chosenSports.indexOf(keyWord)] = keyWord;
        
         AnswerSlotsDisplay.innerHTML = guessedLetter.join(' ');
-        correctLettersDisplay.innerHTML = 'BINGO! THIS LETTER IS THERE\N:' + correctLetters;
+        correctLettersDisplay.innerHTML = 'BINGO! THIS LETTER IS THERE\N:' + " " + correctLetters;
     if (guessedLetter.join('') == chosenSports) {
         alert('Congrats, you won!');
         
@@ -104,20 +142,29 @@ let guessedLetter = []
     } 
     
     else {
+        hint();
+        
+       
         // remainingGuessDisplay.innerHTML = 'guesses left are ' + remainingGuesses;
         wrongLetters.push(keyWord);
         console.log(wrongLetters); 
         
         // be able to count guess left
-        remainingGuessDisplay.innerHTML = 'guesses left  ' + remainingGuesses;
+        remainingGuessDisplay.innerHTML = 'guesses left  ' + " " + remainingGuesses;
         console.log('guesses left are ' + remainingGuesses)
         remainingGuesses--;
-        wrongLettersDisplay.innerHTML = 'SORRY, NOT THIS ONE\n:' + wrongLetters; 
-       
+        wrongLettersDisplay.innerHTML = 'SORRY, NOT THIS ONE\n:' + " " + wrongLetters; 
+        
        
        
        
     }
+        console.log('GOOD TO HO')
+   }
+  
+    console.log(keyWord); 
+  
+    
 //    console.log(keys)
     
    

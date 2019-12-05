@@ -22,6 +22,7 @@ header {
     font-size: 50px;
     border: 5px solid black;
     text-align: center;
+    margin: 25px auto;
     margin-top: 10px;
     width: 1000px;
     height: 100px;
@@ -64,12 +65,16 @@ header {
 
 ul {
     
-    margin-left: 35%;
+    margin-left: 25%;
+    font-size: 20px;
     
 }
 
 body {
+    color: #fff;
     background-color: #ad7c00;
-background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
+}
+.btn btn-primary btn-lg btn-block{
+    background-color: #fff;
 }
