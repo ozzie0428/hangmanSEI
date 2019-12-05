@@ -6,8 +6,16 @@ function namePromt() {
         if (personName != null) {
         alert(welcome);
     }
-    
+   
+
   }
+ 
+
+  document.querySelector(".button")
+        .addEventListener("click", function() {
+  document.querySelector(".hideMe").hidden = true;
+  document.querySelector(".revealMe").hidden = false;
+}, false);
 
 // words = {
 //     sports: ['Football','Futbol','penalty','foul','goal','touchdown','helmet','jersey','kit','cleats','giants','knicks','liverpool'],
