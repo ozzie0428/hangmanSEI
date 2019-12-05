@@ -57,3 +57,13 @@ header {
     height: 100px;
     width: 500px;
 }
+
+.hideMe {
+    display: none;
+}
+
+ul {
+    
+    margin-left: 35%;
+    
+}
