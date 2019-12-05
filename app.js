@@ -108,7 +108,7 @@ let guessedLetter = []
         console.log(wrongLetters); 
         
         // be able to count guess left
-        remainingGuessDisplay.innerHTML = 'guesses left are ' + remainingGuesses;
+        remainingGuessDisplay.innerHTML = 'guesses left  ' + remainingGuesses;
         console.log('guesses left are ' + remainingGuesses)
         remainingGuesses--;
         wrongLettersDisplay.innerHTML = 'SORRY, NOT THIS ONE\n:' + wrongLetters; 
