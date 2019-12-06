@@ -10,7 +10,7 @@ function namePromt() {
 
   }
  
-
+// hide start button
   document.querySelector("#button")
         .addEventListener("click", function() {
   document.querySelector(".revealMe").hidden = false;
@@ -25,11 +25,6 @@ function namePromt() {
 // create array of words for sports
 const sportsWords = ['nfl','futbol','penalty','foul','goal','score','kit','cleats','giants','team',];
 
-// create array of words for SEI
-// const seiWords = ['function','while','var','methods','html','objects','github','if','const'];
-
-// create array of words for palindrome
-// const palindromeWords = ['level','Hannah','civic','kayak','madam','racecar','stats','mom','Noon','peep','sooloos','deedeed','kakkak'];
 
 // choose random words 
 let random = Math.floor(Math.random() * sportsWords.length); 
@@ -42,11 +37,7 @@ console.log(chosenSports);
 
 
 
-// let chosenSei = seiWords[random];
-// console.log(chosenSei);
 
-// let chosenPalindrome = palindromeWords[random];
-// console.log(chosenPalindrome);
 // if user is correct, push to correct section 
 let correctLetters = [];
 
@@ -54,7 +45,7 @@ let correctLetters = [];
 let wrongLetters = [];
 
 let remainingGuesses = 5;
-
+let guessedLetter = []
 
 
 // replace underscore with letters
@@ -63,7 +54,7 @@ let wrongLettersDisplay = document.querySelector('.wrongLetters')
 let correctLettersDisplay = document.querySelector('.correctLetters');
 let remainingGuessDisplay = document.querySelector('.remaining');
 
-let guessedLetter = []
+
 
  // create underscore based on length of words
  function blankLetter() {
@@ -74,6 +65,8 @@ let guessedLetter = []
     return guessedLetter;
  }
 //  console.log(blankLetter);
+
+// create HINT function 
 let hint = function() {
     if(chosenSports == 'nfl') {
     alert('HINT: played on two days of the week')
@@ -83,7 +76,7 @@ let hint = function() {
 } else if(chosenSports == 'penalty') {
     alert('HINT: when a player gets fouled in the box')
 } else if(chosenSports == 'foul') {
-    alert('HINT: NBA players never commit these')
+    alert('HINT: AND 1!')
 } else if(chosenSports == 'goal') {
     alert('HINT: anouncer says this for LOOOOOOOONG time')
 } else if(chosenSports == 'score') {
@@ -101,7 +94,7 @@ let hint = function() {
 
 
 // get users submission 
-// convert key numbers into a srting.
+
  document.addEventListener('keypress',(event)=> { 
     
     if(remainingGuesses == 0){
@@ -110,9 +103,11 @@ let hint = function() {
          clearInterval(interval); 
     }
     
-     
+     // convert key numbers into a srting.
      let keyWord = String.fromCharCode(event.keyCode);
     //  console.log(event)  
+    
+    //create function so letters cant be repeated  
     let duplicate = function(){
         if( wrongLetters.includes(keyWord)) {
             alert('banana')
@@ -122,8 +117,8 @@ let hint = function() {
         }
     }
    
-   const isHere =  duplicate()
-   if (isHere){
+   const alreadyHere =  duplicate()
+   if (alreadyHere){
     console.log('ALRAEDY TRIED')
    } else{
     if(chosenSports.indexOf(keyWord) > -1) {
@@ -159,7 +154,7 @@ let hint = function() {
        
        
     }
-        console.log('GOOD TO HO')
+        console.log('GOOD TO GO')
    }
   
     console.log(keyWord); 
@@ -181,4 +176,3 @@ let hint = function() {
 
 
 
-// get submit button reshuffle the words
