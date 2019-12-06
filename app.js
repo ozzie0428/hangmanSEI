@@ -4,39 +4,24 @@ function namePromt() {
     let welcome = document.querySelector("#nameButton").innerHTML =
     "Hello " + personName + "! Welcome To HangmanSei";
         if (personName != null) {
-        // alert(welcome);
+        alert(welcome);
     } 
-   
-
-  }
- 
-// hide start button
-  document.querySelector("#button")
-        .addEventListener("click", function() {
-  document.querySelector(".revealMe").hidden = false;
-  document.querySelector(".hideMe").hidden = false;
-  document.querySelector("#button").hidden = true;
+   }
+ // hide start button
+  document.querySelector("#button").addEventListener("click", function() {
+    document.querySelector(".revealMe").hidden = false;
+    document.querySelector(".hideMe").hidden = false;
+    document.querySelector("#button").hidden = true;
 }, true);
 
-// words = {
-//     sports: ['Football','Futbol','penalty','foul','goal','touchdown','helmet','jersey','kit','cleats','giants','knicks','liverpool'],
-//     sei: ['function','array','for loop','while loop','variables','methods','html','javascript','css','objects','events','if','else']
-// }
 // create array of words for sports
 const sportsWords = ['nfl','futbol','penalty','foul','goal','score','kit','cleats','giants','team',];
-
 
 // choose random words 
 let random = Math.floor(Math.random() * sportsWords.length); 
 
 // create function to reolad game 
-
-
 let chosenSports =  sportsWords[random];
-console.log(chosenSports);
-
-
-
 
 // if user is correct, push to correct section 
 let correctLetters = [];
@@ -49,13 +34,12 @@ let guessedLetter = []
 
 
 // replace underscore with letters
-let AnswerSlotsDisplay = document.querySelector('.answerSlots');
+let answerSlotsDisplay = document.querySelector('.answerSlots');
 let wrongLettersDisplay = document.querySelector('.wrongLetters')
 let correctLettersDisplay = document.querySelector('.correctLetters');
 let remainingGuessDisplay = document.querySelector('.remaining');
-
-
-
+let applaud = document.querySelector('#applaudSound')
+console.log(applaud);
  // create underscore based on length of words
  function blankLetter() {
     for (let i = 0; i <  chosenSports.length; i++) {
@@ -64,7 +48,6 @@ let remainingGuessDisplay = document.querySelector('.remaining');
     }
     return guessedLetter;
  }
-//  console.log(blankLetter);
 
 // create HINT function 
 let hint = function() {
@@ -91,21 +74,16 @@ let hint = function() {
     alert('HINT: this doesnt have an I in it')
 }
 }
-
-
 // get users submission 
-
- document.addEventListener('keypress',(event)=> { 
+document.addEventListener('keypress',(event)=> { 
     
     if(remainingGuesses == 0){
         alert('Game over');
         document.location.reload();
          clearInterval(interval); 
     }
-    
-     // convert key numbers into a srting.
-     let keyWord = String.fromCharCode(event.keyCode);
-    //  console.log(event)  
+    // convert key numbers into a srting.
+     let keyWord = String.fromCharCode(event.keyCode); 
     
     //create function so letters cant be repeated  
     let duplicate = function(){
@@ -116,24 +94,20 @@ let hint = function() {
             return false
         }
     }
-   
-   const alreadyHere =  duplicate()
-   if (alreadyHere){
-    console.log('ALRAEDY TRIED')
+   const isDuplicate =  duplicate()
+   if (isDuplicate){
    } else{
     if(chosenSports.indexOf(keyWord) > -1) {
-        console.log(true)
         correctLetters.push(keyWord); 
-        console.log(correctLetters);
         guessedLetter[chosenSports.indexOf(keyWord)] = keyWord;
        
-        AnswerSlotsDisplay.innerHTML = guessedLetter.join(' ');
-        correctLettersDisplay.innerHTML = 'BINGO! THIS LETTER IS THERE\N:' + " " + correctLetters;
+        answerSlotsDisplay.innerHTML = guessedLetter.join(' ');
+        correctLettersDisplay.innerHTML = correctLetters;
     if (guessedLetter.join('') == chosenSports) {
         alert('Congrats, you won!');
-        
-        
-    }
+        document.location.reload();
+         clearInterval(interval);
+        }
     } 
     
     else {
@@ -142,35 +116,23 @@ let hint = function() {
        
         // remainingGuessDisplay.innerHTML = 'guesses left are ' + remainingGuesses;
         wrongLetters.push(keyWord);
-        console.log(wrongLetters); 
-        
         // be able to count guess left
-        remainingGuessDisplay.innerHTML = 'guesses left  ' + " " + remainingGuesses;
-        console.log('guesses left are ' + remainingGuesses)
+        remainingGuessDisplay.innerHTML = 'guesses left:  ' + " " + remainingGuesses;
         remainingGuesses--;
-        wrongLettersDisplay.innerHTML = 'SORRY, NOT THIS ONE\n:' + " " + wrongLetters; 
+        wrongLettersDisplay.innerHTML = wrongLetters; 
         
        
        
        
     }
-        console.log('GOOD TO GO')
    }
-  
-    console.log(keyWord); 
-  
-    
-//    console.log(keys)
-    
-   
-
  });
 //  if(remainingGuesses === 0){
 //     alert('Game over');
 //     document.location.reload();
 //      clearInterval(interval); 
 // }
- AnswerSlotsDisplay.innerHTML = blankLetter().join(' ');
+ answerSlotsDisplay.innerHTML = blankLetter().join(' ');
 // wrongLettersDisplay.innerHTML = blankLetter().join(' ');
 
 

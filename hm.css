@@ -1,6 +1,7 @@
 /* make sure Css is working */
 h1 {
     color:red;
+    text-shadow: black 2px 7px;
 }
 h1 {
     text-align: center;
@@ -74,7 +75,14 @@ body {
     color: #fff;
     background-color: #ad7c00;
     background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
+    
 }
 .btn btn-primary btn-lg btn-block{
     background-color: #fff;
+}
+
+h3 {
+    color: black;
+    margin-left: 37%;
+    text-shadow: red 1px 5px;
 }
