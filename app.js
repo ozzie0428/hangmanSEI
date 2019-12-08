@@ -83,12 +83,12 @@ document.addEventListener('keypress',(event)=> {
          clearInterval(interval); 
     }
     // convert key numbers into a srting.
-     let keyWord = String.fromCharCode(event.keyCode); 
+     let keyWord = String.fromCharCode(event.keyCode).toLocaleLowerCase(); 
     
     //create function so letters cant be repeated  
     let duplicate = function(){
         if( wrongLetters.includes(keyWord)) {
-            alert('banana')
+            alert(`Youve already tried:  ${keyWord}`)
             return true;
         } else {
             return false
@@ -96,6 +96,7 @@ document.addEventListener('keypress',(event)=> {
     }
    const isDuplicate =  duplicate()
    if (isDuplicate){
+
    } else{
     if(chosenSports.indexOf(keyWord) > -1) {
         correctLetters.push(keyWord); 
