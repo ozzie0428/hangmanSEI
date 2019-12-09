@@ -21,34 +21,36 @@
     </header>
     <br>
 <button class="btn btn-primary btn-lg btn-block" id="button" onclick=" namePromt()">Start Hangman SEI</button>
+
 <section class="instructions">
-<h1>Instructions:</h1>
-<ul>
-<li> You have 6 wrong guesses to select the correct word.</li>
-<br>
-<li>Use the keyboard to press which letter you want to choose.</li>
-<br>
-<li>Wrong letters will go into the "SORRY, NOT THIS ONE " section.</li>
-<br>
-<li>Correct letters will display in the "BINGO! THIS LETTER IS THERE" section.</li>
-<br>
-</ul>
+    <h1>Instructions:</h1>
+    <ul>
+        <li> You have 6 wrong guesses to select the correct word.</li>
+        <br>
+        <li>Use the keyboard to press which letter you want to choose.</li>
+        <br>
+        <li>Wrong letters will go into the "SORRY, NOT THIS ONE " section.</li>
+        <br>
+        <li>Correct letters will display in the "BINGO! THIS LETTER IS THERE" section.</li>
+        <br>
+    </ul>
 </section>
 <section class="game">
 </div>
 <div class="hideMe">
-<div class="remaining"> guesses left: </div>
-<br>
-
-<div class="answerSlots"></div>
-<br>
-
-<h3>BINGO! THIS LETTER IS THERE:</h3>
-<div class="correctLetters "></div>
-<br>
-<h3> SORRY, NOT THIS ONE:</h3>
-<div class="wrongLetters"> </div>
+    <div class="remaining"> guesses left: </div>
+    <br>
+    
+    <div class="answerSlots"></div>
+    <br>
+    
+    <h3>BINGO! THIS LETTER IS THERE:</h3>
+    <div class="correctLetters "></div>
+    <br>
+    <h3> SORRY, NOT THIS ONE:</h3>
+    <div class="wrongLetters"> </div>
 </div>
+<button class="btn btn-primary btn-lg btn-block" id="button" onclick="resetGame()">RESE T</button>
 </section>
 </body>
 </html>
