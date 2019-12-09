@@ -30,7 +30,7 @@ const sportsWords = [
   "cleats",
   "giants",
   "team",
-  "flag",
+  "flag"
 ];
 
 // choose random words
@@ -56,6 +56,7 @@ function resetGame() {
   chosenSports = randomIzer();
   remainingGuesses = 6;
   remainingGuessDisplay.innerHTML = "guesses left:  ";
+  correctLetters = [];
   wrongLetters = [];
   guessedLetter = [];
   wrongLettersDisplay.innerHTML = "";
@@ -101,7 +102,7 @@ let hint = function() {
   } else if (chosenSports == "team") {
     alert("HINT: this doesnt have an I in it");
   } else if (chosenSports == "flag") {
-      alert("HINT: It can be red or yellow")
+    alert("HINT: It can be red or yellow");
   }
 };
 
