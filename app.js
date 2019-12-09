@@ -29,7 +29,8 @@ const sportsWords = [
   "kit",
   "cleats",
   "giants",
-  "team"
+  "team",
+  "flag",
 ];
 
 // choose random words
@@ -99,6 +100,8 @@ let hint = function() {
     alert("HINT: my favorite team");
   } else if (chosenSports == "team") {
     alert("HINT: this doesnt have an I in it");
+  } else if (chosenSports == "flag") {
+      alert("HINT: It can be red or yellow")
   }
 };
 
